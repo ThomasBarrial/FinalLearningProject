@@ -1,9 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+interface IOrigin {
+  description: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
+
+interface IDestination {
+  description: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
+
+interface ITravelTimeInformation {
+  distance: {
+    text: string;
+    value: string;
+  };
+  duration: {
+    text: string;
+    value: number;
+  };
+  status: string;
+}
+
 interface IPayload {
-  origin: String | null;
-  destination: String | null;
-  travelTimeInformation: String | null;
+  origin: IOrigin;
+  destination: IDestination;
+  travelTimeInformation: ITravelTimeInformation;
 }
 
 const initialState = {

@@ -16,6 +16,8 @@ declare global {
 export type RootStackParamList = {
   HomeScreen: undefined;
   MapScreen: undefined;
+  RideOptionsCard: undefined;
+  NavigateCard: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, Screen>;

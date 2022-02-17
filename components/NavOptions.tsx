@@ -5,7 +5,6 @@ import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { selectOrigin } from '../store/slices/NavSlices';
-import { RootStackParamList } from '../types';
 
 interface Idata {
   id: string;
@@ -33,7 +32,7 @@ const NavOption = () => {
           disabled={!origin}
           onPress={() => navigation.navigate(item.screen as any)}
           style={tw`p-2 pl-6 pb-8 pt-4 border border-gray-200 bg-gray-100 rounded-2xl m-2 w-40`}>
-          {/* <View style={!origin && styles.opacity}>
+          <View style={!origin && styles.opacity}>
             <Image style={{ width: 120, height: 120, resizeMode: 'contain' }} source={{ uri: item.image }} />
             <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
             <Icon
@@ -44,7 +43,7 @@ const NavOption = () => {
               type="antdesign"
               tvParallaxProperties={undefined}
             />
-          </View> */}
+          </View>
         </TouchableOpacity>
       )}
     />

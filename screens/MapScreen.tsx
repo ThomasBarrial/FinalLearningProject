@@ -4,6 +4,9 @@ import tw from 'tailwind-react-native-classnames';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
+import Map from '../components/Map';
+import NavigateCard from '../components/NavigateCard';
+import RideOptionCard from '../components/RideOptionCard';
 
 const MapScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -11,11 +14,11 @@ const MapScreen = () => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate({ key: 'HomeScreen' })}
+        onPress={() => navigation.navigate('HomeScreen')}
         style={tw`bg-gray-100 absolute top-16 left-8 z-50 p-3 rounded-full shadow-lg`}>
         <Icon name="menu" tvParallaxProperties={undefined} />
       </TouchableOpacity>
-      {/* <View style={tw`h-1/2`}>
+      <View style={tw`h-1/2`}>
         <Map />
       </View>
       <View style={tw`h-1/2`}>
@@ -35,7 +38,7 @@ const MapScreen = () => {
             }}
           />
         </Stack.Navigator>
-      </View> */}
+      </View>
     </View>
   );
 };
